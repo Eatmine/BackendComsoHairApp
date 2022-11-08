@@ -1,5 +1,7 @@
 package com.example.Cosmo.Budget.Tracker;
 
+import com.example.Cosmo.Budget.Tracker.Models.Appointment;
+import com.example.Cosmo.Budget.Tracker.Repositories.AppointmentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,17 +15,17 @@ public class CosmoApplication {
 
 	}
 //	@Bean
-//	public CommandLineRunner run(WebUserRepository repository){
+//	public CommandLineRunner run(AppointmentRepository repository){
 //		return (args -> {
 //			insertJavaAdvocates(repository);
 //			System.out.println(repository.findAll());
 //		});
 //
 //	}
-//	private void insertJavaAdvocates (WebUserRepository webUserRepository){
-//		webUserRepository.save(new WebUser("Edmine", "SugaMama",2000.00,3000.00,"braids"));
-//		webUserRepository.save(new WebUser("Tony", "Formation",1000.00,2000.00,"extension"));
-//		webUserRepository.save(new WebUser("Annie", "SayMyName",980.00,1200.09,"relaxer"));
+//	private void insertJavaAdvocates (AppointmentRepository webUserRepository){
+//		webUserRepository.save(new Appointment("Edmine", "SugaMama",2000.00,3000.00,"braids", "Jacksonville"));
+//		webUserRepository.save(new Appointment("Tony", "Formation",1000.00,2000.00,"extension","Jacksonville"));
+//		webUserRepository.save(new Appointment("Annie", "SayMyName",980.00,1200.09,"relaxer","Jacksonville"));
 //
 //	}
 
