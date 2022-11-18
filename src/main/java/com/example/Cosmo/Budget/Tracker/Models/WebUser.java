@@ -46,19 +46,19 @@ public class WebUser {
         this.id = id;
     }
 
-    public String getUsername() {
+    public String getEmail() {
         return email;
     }
 
-    public void setUsername(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
+    public String getPass() {
         return pass;
     }
 
-    public void setPassword(String pass) {
+    public void setPass(String pass) {
         this.pass = pass;
     }
 
@@ -69,10 +69,10 @@ public class WebUser {
         this.city = city;
     }
 
-    public String getHairstyle() {
+    public String getHairstyleType() {
         return hairstyleType;
     }
-    public void setHairstyle(String hairstyleType) {
+    public void setHairstyleType(String hairstyleType) {
         this.hairstyleType = hairstyleType;
     }
 
@@ -96,7 +96,7 @@ public class WebUser {
         return "webUser{" +
                 "id=" + id +
                 ", email='" + email + '\'' +
-                ", password='" + pass + '\'' +
+                ", pass='" + pass + '\'' +
                 ", hairstyleType='" + hairstyleType + '\'' +
                 ", city='" + city + '\'' +
                 "hairBudget=" + hairBudget+

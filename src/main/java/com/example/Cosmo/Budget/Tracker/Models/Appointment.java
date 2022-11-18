@@ -1,6 +1,8 @@
 package com.example.Cosmo.Budget.Tracker.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,7 +12,9 @@ public class Appointment {
     @Id
     @GeneratedValue
     private Long id;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+    @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime time;
     private String location;
     private Double deposit;

@@ -6,6 +6,9 @@ import com.example.Cosmo.Budget.Tracker.Repositories.WebUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.Optional;
+
 
 @RestController
 
@@ -16,31 +19,17 @@ public class WebUserController {
     private WebUserRepository webUserRepository;
 
     @PostMapping("/addUsers")
-    public String addWebUser(@RequestParam(value ="email", defaultValue = "user1") String email,
-                             @RequestParam(value = "pass", defaultValue="Rihanna") String pass,
-//                             @RequestParam(value = "20.00", defaultValue = "50.00")
-                             Double hairBudget,
-                             Double appointmentBudget,
-                             @RequestParam(value = "hairstyleType", defaultValue="weave")String hairstyleType,
-                             @RequestParam(value = "city", defaultValue="Tampa")String city
-    )
-    {
-        WebUser webUser = new WebUser();
-        webUser.setUsername(email);
-        webUser.setPassword(pass);
-        webUser.setCity(city);
-        webUser.setHairBudget(hairBudget);
-        webUser.setAppointmentBudget(appointmentBudget);
-        webUser.setHairstyle(hairstyleType);
-//        webUser.setStyleType(styleType);
-        webUserRepository.save(webUser);
-        return "Added new users to repo!";
-    }
-
-
+    public WebUser addWebUser( @Valid @RequestBody WebUser webUser)
+    {return webUserRepository.save(webUser);}
 
     @GetMapping("/getUsers")
-    public Iterable<WebUser> getWebUser() {
+    public Iterable<WebUser> getWebUsers() {
         return webUserRepository.findAll();
+    }
+
+    // optional is used because if there isn't a user with that id then the return type is null as an option
+    @GetMapping("/getUsers/{id}")
+    public Optional<WebUser> getWebUser(@PathVariable  Long id) {
+        return webUserRepository.findById(id);
     }
 }
